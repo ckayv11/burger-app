@@ -1,0 +1,10 @@
+INSERT INTO burgers (burger_name) VALUES ('Cheeseburger');
+INSERT INTO burgers (burger_name) VALUES ('Double Cheeseburger');
+INSERT INTO burgers (burger_name) VALUES ('Hamburger');
+INSERT INTO burgers (burger_name) VALUES ('Bacon Cheeseburger');
+INSERT INTO burgers (burger_name) VALUES ('Mushroom Swiss Burger');
+INSERT INTO burgers (burger_name) VALUES ('Veggie Burger');
+INSERT INTO burgers (burger_name) VALUES ('Black Bean Burger');
+INSERT INTO burgers (burger_name) VALUES ('Cheeseburger with Fried Egg');
+INSERT INTO burgers (burger_name) VALUES ('BBQ Burger with Onion Rings');
+INSERT INTO burgers (burger_name) VALUES ('Hawaiian Burger with Pineapple');
