@@ -8,14 +8,60 @@
     </div>
 
     <div class="row">
-      <form>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"><i class="far fa-cheeseburger"></i>Menu</th>
+            <th scope="col">Burger Options</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Cheeseburger</td>
+            <td>6</td>
+            <td>Veggie Burger</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Double Cheeseburger</td>
+            <td>7</td>
+            <td>Black Bean Burger</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Hamburger</td>
+            <td>8</td>
+            <td>Cheeseburger with Fried Egg</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Bacon Cheeseburger</td>
+            <td>9</td>
+            <td>BBQ Burger with Onion Rings</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Mushroom Swiss Burger</td>
+            <td>10</td>
+            <td>Hawaiian Burger with Pineapple</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row">
+      <h2>Order a burger</h2>
+      <form class="create-form">
         <div class="form-row">
           <div class="col-7">
-            <label for="newburger">Order a burger</label>
-            <input type="text" class="form-control" placeholder="Burger">
+            <label for="newburger">Burger Name:</label>
+            <input type="text" class="form-control" placeholder="Enter burger name">
           </div>
           <div class="col">
-            <button id="add-burger" type="submit" class="btn btn-dark btn-sm">Add</button>
+            <button id="add-burger" type="submit" class="btn btn-dark btn-sm"><i class="fas fa-plus"></i>Add Burger</button>
           </div>
         </div>  
       </form>
@@ -27,9 +73,7 @@
             <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <span><strong> {{this.id}} . {{this.burger_name}} </strong></span>
-                        <button type="button" class="btn btn-success btn-sm" id ="devour-btn" data-id="{{this.id}}">Devour</button>
-                        <hr>
+                      {{> burgers/burger-block devour=true}}
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -40,8 +84,7 @@
             <ul>
                 {{#each burgers}}
                     {{#if devoured}}
-                        <span><strong> {{this.id}} . {{this.burger_name}} </strong></span>
-                        <hr>
+                      {{> burgers/burger-block devour=false}}
                     {{/if}}
                 {{/each}}3
             </ul>
