@@ -11,3 +11,12 @@
     border: 1px solid black;
     opacity: 0.6;
   }
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fa-hamburger {
+    margin-left: 5px;
+}
