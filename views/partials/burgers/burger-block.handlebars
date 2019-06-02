@@ -1,9 +1,10 @@
-<li>
+<li style="list-style-type:none;">
 	{{burger_name}}
 
-	<button class="change-state" data-id="{{id}}" data-newDevoured="{{devour}}">
-		{{#if devour}}DEVOUR!{{else}}TO GO BOX{{/if}}
-	</button>
-
-	<button class="trash-burger" data-id="{{this.id}}">TRASH!</button>
+	{{#if devour}}
+	<button id="change-devour" class="btn btn-info btn-sm" data-id="{{id}}" data-newDevour="{{devour}}"><i class="fas fa-teeth-open"></i>DEVOUR!</button>
+	{{else}}
+	<button id="trash-burger" class="btn btn-warning btn-sm" data-id="{{this.id}}"><i class="fas fa-trash"></i>Trash</button>
+	{{/if}}
 </li>
+<hr>
