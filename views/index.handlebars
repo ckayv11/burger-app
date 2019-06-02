@@ -1,15 +1,15 @@
 <div class="container">
 
-    <div class="jumbotron">
-      <div id="header">
-        <h1 class="text-center">Burgerlicious!</h1>
-        <h5 class="text-center">Eat all of the burgers!</h5>
-      </div>
+  <div class="jumbotron">
+    <div id="header">
+      <h1 class="text-center">Burgerlicious!</h1>
+      <h5 class="text-center">Eat all of the burgers!</h5>
     </div>
+  </div>
 
-    <h3><i class="fas fa-hamburger"></i>Menu</h3>
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
+  <h3><i class="fas fa-hamburger"></i>Menu</h3>
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
       <table class="table table-bordered">
         <thead class="thead-dark">
           <tr>
@@ -52,51 +52,62 @@
           </tr>
         </tbody>
       </table>
-      </div>
     </div>
-    <br>
-    <br>
+  </div>
+  <br>
+  <br>
 
-    <h3>Place an order</h3>
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
+  <h3>Place an order</h3>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
       <form class="create-form">
-          <div class="form-group">
-            <input type="text" id="newburger" name="burger" class="form-control" placeholder="Enter burger name">
-          </div>
-          <div class="form-group">
-            <button id="add-burger" type="submit" class="btn btn-dark btn-sm"><i class="fas fa-plus"></i>Add Burger</button>
-          </div>
-        </div>  
-      </form>
+        <div class="form-group">
+          <input type="text" id="newburger" name="burger" class="form-control" placeholder="Enter burger name">
+        </div>
+        <div class="form-group">
+          <button id="add-burger" type="submit" class="btn btn-dark btn-sm"><i class="fas fa-plus"></i>Add
+            Burger</button>
+        </div>
+    </div>
+    </form>
+  </div>
+</div>
+<br>
+<br>
+<hr>
+
+<div class="row">
+  <div class="col-sm-5 offset-sm-1" id="burger-ready">
+    <div class="card text-white bg-success mb-5">
+      <div class="card-header">
+        <h3>Ready Burgers</h3>
+      </div>
+      <div class="card-body bg-light">
+        <ul class="card-text text-dark">
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devour=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
       </div>
     </div>
-    <br>
-    <br>
-    <hr>
+  </div>
 
-    <div class="row">
-        <div class="col-sm-6" id="burger-ready">
-            <h3>Your burger's ready!</h3>
-            <ul>
-                {{#each burgers}}
-                    {{#unless devoured}}
-                      {{> burgers/burger-block devour=true}}
-                    {{/unless}}
-                {{/each}}
-            </ul>
-        </div>
-        
-        <div class="col-sm-6" id="burger-eaten">
-            <h3>Burgers devoured</h3>
-            <ul>
-                {{#each burgers}}
-                    {{#if devoured}}
-                      {{> burgers/burger-block devour=false}}
-                    {{/if}}
-                {{/each}}
-            </ul>
-        </div>
+  <div class="col-sm-5" id="burger-eaten">
+    <div class="card text-white bg-dark mb-5">
+      <div class="card-header">
+        <h3>Devoured Burgers</h3>
+      </div>
+      <div class="card-body bg-light">
+        <ul class="card-text text-dark">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devour=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
     </div>
-
+  </div>
 </div>
